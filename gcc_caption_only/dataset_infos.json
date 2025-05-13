@@ -1,0 +1,32 @@
+{"dangne--gcc_caption_only": {
+    "description": "",
+    "citation": "",
+    "homepage": "",
+    "license": "",
+    "features": {
+        "text": {
+            "dtype": "string",
+            "id": null,
+            "_type": "Value"
+        }
+    },
+    "post_processed": null,
+    "supervised_keys": null,
+    "task_templates": null,
+    "builder_name": null,
+    "config_name": null,
+    "version": null,
+    "splits": {
+        "train": {
+            "name": "train",
+            "num_bytes": 195068777,
+            "num_examples": 3318333,
+            "dataset_name": "gcc_caption_only"
+        }
+    },
+    "download_checksums": null,
+    "download_size": 125252021,
+    "post_processing_size": null,
+    "dataset_size": 195068777,
+    "size_in_bytes": 320320798
+}}
