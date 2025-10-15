@@ -16,6 +16,6 @@ Alongside it, our **TisCIR**, a pioneering framework driving the next generation
 
 **Authors**: 
 
-**[Zhechun Liang](https://geonm.github.io/)\*<sup>1</sup>, [Tao Huang]\*<sup>2</sup>, [Fangfang Wu]\*<sup>3</sup>,[Shiwen Xue]\*<sup>4</sup>,[Zhenyu Wang]\*<sup>5/sup>,[Weisheng Dong]\*<sup>6</sup>,[Xin Li]\*<sup>7</sup>,[Guangming Shi]\*<sup>8</sup>**
+**[Zhechun Liang](https://github.com/captainhvs)\*<sup>1</sup>, Tao Huang\*<sup>2</sup>, Fangfang Wu\*<sup>3</sup>,Shiwen Xue\*<sup>4</sup>,Zhenyu Wang\*<sup>5</sup>, Weisheng Dong\*<sup>6</sup>,Xin Li\*<sup>7</sup>,Guangming Shi\*<sup>8</sup>**
 
 <sup>1</sup> Xidian University <sup>2</sup> State University of New York at Albany <sup>3</sup> Key Laboratory of Intelligent Perception and Image Understanding of Ministry of Education
