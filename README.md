@@ -47,6 +47,13 @@ $ conda activate tiscir
 $ pip install -r requirements.txt
 ```
 
+This includes the following models, which need to be downloaded from Huggingface and placed in the `clip_model` folder:  
+
+- [CLIP-ViT-Large-Patch14](https://huggingface.co/openai/clip-vit-large-patch14)  
+- [en_core_web_sm](https://huggingface.co/spacy/en_core_web_sm)  
+- [Stable Diffusion XL Base 1.0](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0)
+
+
 
 ## 📂 Dataset Preparation
 
