@@ -19,3 +19,16 @@ Alongside it, our **TisCIR**, a pioneering framework driving the next generation
 **[Zhechun Liang](https://github.com/captainhvs)\*<sup>1</sup>, Tao Huang\*<sup>2</sup>, Fangfang Wu\*<sup>3</sup>,Shiwen Xue\*<sup>4</sup>,Zhenyu Wang\*<sup>5</sup>, Weisheng Dong\*<sup>6</sup>,Xin Li\*<sup>7</sup>,Guangming Shi\*<sup>8</sup>**
 
 <sup>1</sup> Xidian University <sup>2</sup> State University of New York at Albany <sup>3</sup> Key Laboratory of Intelligent Perception and Image Understanding of Ministry of Education
+
+
+## ⭐ Overview
+
+
+**Zero-Shot Query Text Generator (ZS-QTG)**
+
+
+<img width="600" height="300" alt="zsqtg" src="https://github.com/user-attachments/assets/8050f58e-9b29-44a1-9bd1-68275351e19d" />
+
+
+
+ZS-QTG is designed to automatically generate text queries that closely match a given target image in a zero-shot manner. It leverages CBART as a language backbone to propose fluent candidate sentences and introduces visual guidance from RemoteCLIP to evaluate image–text similarity. By combining the linguistic probability from CBART with the visual–semantic score from RemoteCLIP, ZS-QTG adaptively selects the most visually relevant words during generation, ensuring that the final query accurately reflects the image content.
