@@ -47,7 +47,7 @@ $ conda activate tiscir
 $ pip install -r requirements.txt
 ```
 
-This includes the following models, which need to be downloaded from Huggingface and placed in the `clip_model` folder:  
+In addition, you need to download several required model weights from Huggingface and place them in the `clip_model` folder. This includes the following models:  
 
 - [CLIP-ViT-Large-Patch14](https://huggingface.co/openai/clip-vit-large-patch14)  
 - [en_core_web_sm](https://huggingface.co/spacy/en_core_web_sm)  
