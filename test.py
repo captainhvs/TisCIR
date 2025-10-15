@@ -33,7 +33,7 @@ from validate import cirr_compute_val_metrics_with_FGIA
 
 
 
-# --cirr_dataset_path ./Patternet+CIRR_ratio
+# --cirr_dataset_path ./PatterCIR
 
 
 
