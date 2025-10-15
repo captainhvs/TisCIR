@@ -1,7 +1,7 @@
 ## PatternCIR Benchmark and TisCIR: Advancing Zero-Shot Composed Image Retrieval in Remote Sensing（IJCAI 2025）
 
 
-[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://ijcai-preprints.s3.us-west-1.amazonaws.com/2025/4090.pdf)
+[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://www.ijcai.org/proceedings/2025/0171.pdf)
 
 
 
@@ -24,18 +24,8 @@ Alongside it, our **TisCIR**, a pioneering framework driving the next generation
 ## ⭐ Overview
 
 
-**Zero-Shot Query Text Generator (ZS-QTG)**<br><br>
 
-
-
-<img width="400" height="200" alt="zsqtg" src="https://github.com/user-attachments/assets/8050f58e-9b29-44a1-9bd1-68275351e19d" /><br><br>
-
-
-
-ZS-QTG is designed to automatically generate text queries that closely match a given target image in a zero-shot manner. It leverages CBART as a language backbone to propose fluent candidate sentences and introduces visual guidance from RemoteCLIP to evaluate image–text similarity. By combining the linguistic probability from CBART with the visual–semantic score from RemoteCLIP, ZS-QTG adaptively selects the most visually relevant words during generation, ensuring that the final query accurately reflects the image content.<br><br>
-
-
-**Text-image Sequential Training of Composed Image Retrieval (TisCIR)**<br><br>
+### Text-image Sequential Training of Composed Image Retrieval (TisCIR)
 
 <img width="400" height="200" alt="stage1" src="https://github.com/user-attachments/assets/94c00e10-74fa-4917-8d7d-159e7af6b4e7" /><br><br>
 
@@ -51,8 +41,82 @@ TisCIR enhances zero-shot composed image retrieval by sequentially training on t
 Get started with TisCIR by installing the necessary dependencies:
 
 ```bash
-$ pip install torch transformers diffusers accelerate datasets spacy
-$ python -m spacy download en_core_web_sm
+$ cd TisCIR
+$ conda create -n tiscir python==3.9
+$ conda activate tiscir
+$ pip install -r requirements.txt
 ```
+
+
+## 📂 Dataset Preparation
+
+Our PatternCIR dataset, including the training, validation, and test sets, is fully open-source.
+
+Please refer to [here](https://1drv.ms/u/c/3181ea346496e56a/EWKxCKAC8kxBjnRvcMfU4bMBWIkx4KtHRy7_q1R9suYE3A?e=O7inh2) to download zip file.
+
+
+## 💯 How to Evaluate TisCIR
+
+
+When evaluating TisCIR, first download the PatternCIR dataset and the FGIA checkpoint `.pt` files.  
+
+- After extracting the PatternCIR dataset, place it in the **project root directory**.  
+- The FGIA checkpoints are by default located in `./train_out/checkpoints_FGIA/`.
+
+
+Evaluate TisCIR on the PatternCIR test set with the following command:
+
+
+```bash
+$ python test.py \
+--cirr_dataset_path /path/to/PatternCIR \
+--resume  /path/to/FGIA_checkpoints
+```
+
+
+## 📚 How to Train TisCIR
+
+
+When training TisCIR, the process involves two sequential training stages. The command for the first stage is as follows:
+
+```bash
+$ python train_MSMP.py \
+--cirr_dataset_path /path/to/PatternCIR \
+--position_id 1/2/3
+```
+In the first stage, three projections need to be trained separately. The `position_id` should be set to **1**, **2**, and **3**, respectively.
+
+The trained weights will be saved in `./train_out/checkpoints_MSMP_{position_id}/`, where `{position_id}` should be replaced with the corresponding projection ID (1, 2, or 3).
+
+The command for the second stage is as follows:
+```bash
+$ python train_FGIA.py \
+--cirr_dataset_path /path/to/PatternCIR 
+```
+The trained weights will be saved in `./train_out/checkpoints_FGIA/`.
+
+
+## Citation
+
+```
+@inproceedings{ijcai2025p171,
+  title     = {PatternCIR Benchmark and TisCIR: Advancing Zero-Shot Composed Image Retrieval in Remote Sensing},
+  author    = {Liang, Zhechun and Huang, Tao and Wu, Fangfang and Xue, Shiwen and Wang, Zhenyu and Dong, Weisheng and Li, Xin and Shi, Guangming},
+  booktitle = {Proceedings of the Thirty-Fourth International Joint Conference on
+               Artificial Intelligence, {IJCAI-25}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {James Kwok},
+  pages     = {1530--1538},
+  year      = {2025},
+  month     = {8},
+  note      = {Main Track},
+  doi       = {10.24963/ijcai.2025/171},
+  url       = {https://doi.org/10.24963/ijcai.2025/171},
+}
+```
+
+
+## Acknowledgement
+We would like to express our special gratitude to the authors of [LinCIR](https://github.com/navervision/lincir) for their invaluable contributions, as our code draws significant inspiration from this open-source project.
 
 
